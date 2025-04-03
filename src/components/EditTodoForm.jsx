@@ -1,16 +1,15 @@
 import React, { useState } from "react";
+import "../styles/TodoForm.css";
 
 export const EditTodoForm = ({ editTodo, task }) => {
   const [value, setValue] = useState(task.task);
 
   const handleSubmit = (e) => {
-    // prevent default action
     e.preventDefault();
-    // edit todo
     editTodo(value, task.id);
   };
   return (
-    <form onSubmit={handleSubmit} className="TodoForm">
+    <form onSubmit={handleSubmit} className="todo-form">
       <input
         type="text"
         value={value}

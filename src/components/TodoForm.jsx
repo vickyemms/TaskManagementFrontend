@@ -1,20 +1,18 @@
 import React, { useState } from "react";
+import "../styles/TodoForm.css";
 
 export const TodoForm = ({ addTodo }) => {
   const [value, setValue] = useState("");
 
   const handleSubmit = (e) => {
-    // prevent default action
     e.preventDefault();
     if (value) {
-      // add todo
       addTodo(value);
-      // clear form after submission
       setValue("");
     }
   };
   return (
-    <form onSubmit={handleSubmit} className="TodoForm">
+    <form onSubmit={handleSubmit} className="todo-form">
       <input
         type="text"
         value={value}
